@@ -130,7 +130,7 @@ def parse_burst(token: str) -> Burst:
     token = token.strip()
     if token.startswith("CPU"):
         actions_str = re.search(r"\{(.*)\}", token).group(1)
-        parts = [part.strip() for part in actions_str.split(",")]
+        parts = re.findall(r"R\[\d+,\s*\d+\]|F\[\d+,\s*\d+\]|\d+", actions_str)
         actions: List[CPUAction] = []
         for part in parts:
             if not part:
