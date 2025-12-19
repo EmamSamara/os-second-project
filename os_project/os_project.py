@@ -1,29 +1,7 @@
-"""Operating System Scheduler Simulation for ENCS3390 Project 2.
+"""
+Name  : Emam Samara
+id : 1220022
 
-The implementation models:
-    * Preemptive priority scheduling with round-robin time slicing per priority.
-    * Aging (priority promotion) for tasks waiting too long in the ready queue.
-    * Resource requests/releases embedded inside CPU bursts.
-    * I/O bursts that proceed in parallel.
-    * Deadlock detection and a basic recovery strategy (terminate lowest-priority
-      process participating in the deadlock).
-    * Final report with Gantt chart data, average waiting/turnaround time, and
-      a log of deadlock events.
-
-Input file format:
-    [ResourceID, Instances], [ResourceID, Instances], ...
-    PID Arrival Priority BURST_SPEC ...
-
-Example burst specification:
-    CPU {R[1,2], 50, F[1,1], 20}
-    IO {30}
-
-CPU bursts may contain operations:
-    - R[resource_id, instances] : request resource
-    - F[resource_id, instances] : free resource
-    - numbers (e.g., 50) : execute for N time units
-
-Every process must start and end with CPU bursts.
 """
 
 from __future__ import annotations
